@@ -7,9 +7,6 @@ class ExpensesController < ApplicationController
   end
 
   # GET /expenses/1 or /expenses/1.json
-  def show
-  end
-
   # GET /expenses/new
   def new
     @expense = Expense.new
@@ -25,7 +22,7 @@ class ExpensesController < ApplicationController
 
     respond_to do |format|
       if @expense.save
-        format.html { redirect_to expense_url(@expense), notice: "Expense was successfully created." }
+        format.html { redirect_to expenses_url, notice: "Expense was successfully Created." }
         format.json { render :show, status: :created, location: @expense }
       else
         format.html { render :new, status: :unprocessable_entity }
