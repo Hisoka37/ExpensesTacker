@@ -9,14 +9,18 @@
   <% end %>
 
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Expenses</h1>
+    <h1 class="font-bold text-4xl">Expenses <span class="text-red-500">(<%= @expenses.map(&:amount).sum.round(2)%> $)</span></h1>
     <%= link_to "New expense", new_expense_path, class: "rounded-lg py-3 px-5
     bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="expenses" class="min-w-full mt-4">
+  
+  <div id="expenses" class="min-w-full mt-3">
     <% @expenses_by_day.each do |day, expenses|%>
-    <h2 class="text-lg mt-2 font-medium mb-2"><%= day %></h2> 
+    <div class="flex justify-between">
+      <h2 class="text-lg mt-2 font-medium mb-2"><%= day %></h2> 
+      <h2 class="text-lg mt-2  font-medium mb-2">Total: <%= expenses.map(&:amount).sum.round(2)%> $</h2> 
+    </div>
     <table
       class="min-w-full table-fixed border-collapse border border-slate-200 rounded-lg mt-2"
     >
