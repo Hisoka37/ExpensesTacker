@@ -3,14 +3,14 @@
   <td class="p-3 text-center"><%= expense.date %></td>
   <td class="p-3 text-center"><%= expense.amount %> $</td>
   <td class="p-3 text-center">
-    <div class="rounded-lg py-3 px-3 bg-blue-300 inline-block font-medium"><%= expense.category&.name %></div>
+    <div class="rounded-lg py-1 px-3 <%= tailwind_color(expense.category) %> inline-block font-medium"><%= expense.category&.name %></div>
   </td>
   <td class="p-3 text-center whitespace-nowrap overflow-hidden"><%= expense.description&.truncate(20) %></td>
   <td class="p-3 text-center">
     <%= link_to "Edit this expense", edit_expense_path(expense), class: "rounded-lg py-3 px-5 bg-green-300 inline-block font-medium" %>
   </td>
   <td class="p-3 text-center">
-    <%= link_to "Delete this expense", expense_path(expense), data: {turbo_method: :delete, turbo_confirm: 'Are you Sure?'}, class: "rounded-lg py-3 px-5 bg-red-300 inline-block font-medium" %>
+    <%= link_to "Delete this expense", expense_path(expense), data: {turbo_method: :delete, turbo_confirm: 'Are you Sure?'}, class: "rounded-lg py-3 px-5 bg-red-500 inline-block font-medium" %>
   </td>
 </tr>
 
