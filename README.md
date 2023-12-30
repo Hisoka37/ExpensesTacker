@@ -33,6 +33,7 @@
     <li><a href="">Ruby</a></li>
     <li><a href="">Ruby on Rails</a></li>
     <li><a href="">JavaScript</a></li>
+    <li><a href="">chart.js</a></li>
     <li><a href="">TailwindCss</a></li>
     <li><a href="">PostgreSql</a></li>
   </ul>
@@ -53,6 +54,7 @@
 
   - Design a user-friendly and intuitive interface for easy navigation and interaction.
   - Employ responsive design principles to ensure accessibility on various devices.
+  - Use charts for better tracking.
 
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
