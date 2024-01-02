@@ -29,6 +29,10 @@
     <%= link_to "New expense", new_expense_path, class: "rounded-lg py-3 px-5
     bg-blue-600 text-white block font-medium" %>
   </div>
+  <%=     @sum_by_month  %>
+
+  <canvas id="myChart" width="400px" height="150px" data-labels="<%= @months %>" data-data="<%= @sum_by_month %>" ></canvas>
+
 
   <div id="expenses" class="min-w-full mt-3">
     <% @expenses_by_day.each do |day, expenses|%>
