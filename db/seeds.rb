@@ -10,6 +10,7 @@
         Expense.create(
             name: "Expense for #{Date::MONTHNAMES[month]}",
             amount: rand(100),
-            date: Date.new(2023, month, rand(1..20))
+            category_id: rand(2) + 1,
+            date: Date.new(2024, month, rand(1..20))
         )
 end
