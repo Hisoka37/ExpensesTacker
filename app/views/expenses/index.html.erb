@@ -29,9 +29,9 @@
     <%= link_to "New expense", new_expense_path, class: "rounded-lg py-3 px-5
     bg-blue-600 text-white block font-medium" %>
   </div>
-  <%=     @sum_by_month  %>
 
-  <canvas id="myChart" width="400px" height="150px" data-labels="<%= @months %>" data-data="<%= @sum_by_month %>" ></canvas>
+
+  <canvas id="myChart" width="400px" height="100px" data-labels="<%= params[:month] ?  @days_in_month : @months %>" data-data="<%=  params[:month] ? @sum_by_day : @sum_by_month %>" ></canvas>
 
 
   <div id="expenses" class="min-w-full mt-3">
@@ -42,18 +42,16 @@
         Total: <%= expenses.map(&:amount).sum.round(2)%> $
       </h2>
     </div>
-    <table
-      class="min-w-full table-fixed border-collapse border border-slate-200 rounded-lg mt-2"
-    >
-      <thead class="bg-blue-500 text-white rounded-md text-left">
-        <tr class="rounded-md items-center">
-          <th class="min-w-[150px] p-2 font-medium">Name</th>
-          <th class="min-w-[150px] p-2 font-medium">Date</th>
-          <th class="min-w-[150px] p-2 font-medium">Amount</th>
-          <th class="min-w-[150px] p-2 font-medium">Category</th>
-          <th class="min-w-[150px] p-2 font-medium">Description</th>
-          <th class="min-w-[150px] p-2 font-medium">Edit</th>
-          <th class="min-w-[150px] p-2 font-medium">Delete</th>
+    <table class="min-w-full table-auto border-collapse border border-gray-300 rounded-lg mt-2">
+      <thead class="bg-blue-500 text-white">
+        <tr>
+          <th class="p-3 font-medium">Name</th>
+          <th class="p-3 font-medium">Date</th>
+          <th class="p-3 font-medium">Amount</th>
+          <th class="p-3 font-medium">Category</th>
+          <th class="p-3 font-medium">Description</th>
+          <th class="p-3 font-medium">Edit</th>
+          <th class="p-3 font-medium">Delete</th>
         </tr>
       </thead>
       <tbody>

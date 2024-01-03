@@ -1,6 +1,6 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import '@hotwired/turbo-rails'
-import "controllers"
+import { Controller } from "@hotwired/stimulus"
 import { Chart, registerables } from 'chart.js'
 
 Chart.register(...registerables)
@@ -13,6 +13,8 @@ document.addEventListener('turbo:load', () => {
     data: {
       labels: JSON.parse(ctx.canvas.dataset.labels),
       datasets: [{
+        label: 'Monthly Expenses',
+        borderColor: '#FF6384',
         data: JSON.parse(ctx.canvas.dataset.data),
       }]
     },
